@@ -102,3 +102,134 @@ document.body.appendChild(boton);
 boton.addEventListener("click", () => {
     alert("exito")
 })
+
+//Variables y tipos de datos:
+//a) Crea una variable y asígnale un número. Luego, imprime por consola el doble de ese número.
+const num = 2
+console.log(num * 2);
+//b) Crea una variable y asígnale una cadena de texto. Luego, imprime por consola lalongitud de esa cadena.
+let cadena = "Hola Profesor";
+console.log("Longitud :" ,cadena.length);
+
+//c) Crea dos variables numéricas y realiza operaciones matemáticas básicas con ellas (suma, resta, multiplicación, división).
+let num_1= 4;
+let num_2= 4;
+
+console.log(num_1 - num_2);
+console.log(num_1 + num_2);
+console.log(num_1 * num_2);
+console.log(num_1 / num_2);
+
+//Estructuras de control:
+//a) Escribe un programa que reciba un número y determine si es par o impar.
+function determinarParimpar(numero) {
+    if (numero % 2 === 0) {
+      return "El número es par.";
+    } else {
+      return "El número es impar.";
+    }
+  }
+  
+// Solicitar al usuario que ingrese un número
+let numeroIngresado = prompt("Ingrese un número:");
+  
+// Convertir el valor ingresado a un número entero
+numeroIngresado = parseInt(numeroIngresado);
+  
+// Llamar a la función para determinar si es par o impar y mostrar el resultado
+let resultado = determinarParimpar(numeroIngresado);
+console.log(resultado);
+//b) Crea un bucle que imprima los números del 1 al 10.
+for (var i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+//c) Escribe una función que reciba dos números y devuelva el mayor de ellos.
+/*let numero1 = 2
+let numero2 = 8
+function mayor(numero1,numero2) {
+    return Math.max (numero1 , numero2);
+}
+console.log(mayor(numero1 , numero2));*/
+
+function MayoryMenor(numer1, numer2) {
+    if (numer1 > numer2) {
+        return numer1;
+    } else {
+        return numer2;
+    }
+}
+
+let resultado_MyM = MayoryMenor(8, 2);
+console.log(resultado_MyM);
+
+//Funciones y arrays:
+//a) Escribe una función que reciba un array de números y devuelva la suma de todos ellos.
+function obtenerSuma(arrayNumeros) {
+    let suma = 0;
+    for(let i = 0; i < arrayNumeros.length; i++){
+     suma = suma + arrayNumeros[i];
+    }
+    return suma;
+}
+let numerosss = [2,3,4,5];
+let resultado3 = obtenerSuma(numerosss);
+console.log(resultado3);
+
+//b) Crea un array de nombres y recorre el array imprimiendo cada nombre en la consola.
+const nombres = ["Jani", "Yoli", "Kevin"];
+for (let i = 0; i < nombres.length; i++) {
+    console.log(nombres[i]);
+}
+
+//c) Escribe una función que reciba un array de números y devuelva un nuevo array con solo los números pares.
+function numbers(arrayNumbers) {
+    let numerios = [];
+    for (let i = 0; i < arrayNumbers.length; i++){
+        if (arrayNumbers[i] % 2 === 0) {
+           numerios.push(arrayNumbers[i]);
+    }  
+  }
+    return numerios;
+}
+
+let arrayNumbers = [0,1,2,3,4,5,6,7,8,9,10];
+let numerios= numbers(arrayNumbers);
+console.log(numerios);
+
+//Objetos y métodos:
+//a) Crea un objeto persona con propiedades como nombre, edad y profesión. Luego, accede a esas propiedades e imprímelas en la consola.
+const object = {
+    nombre: "Yoli",
+    edad: 20,
+    esAlumna: true
+};
+
+console.log(object.nombre,object.edad,object.esAlumna);
+//b) Agrega un método al objeto persona que imprima un mensaje de saludo utilizando las propiedades del objeto.
+const personita = {
+    nombre: "Coki",
+    edad: 6,
+    direccion: "Calle Falsa 123",
+    saludar: function() {
+        console.log("Mi nombre es " + this.nombre + " Tengo " + this.edad + " Vivo en " + this.direccion);
+    }
+};
+
+personita.saludar();
+
+//c) Crea un objeto libro con propiedades como título, autor y año de publicación. Luego, crea un método que calcule la antigüedad del libro en años.
+
+let libro = {
+    titulo: "Como Agua Para Chocolate",
+    autor: "Laura Esquivel",
+    ano_de_publicacion: 1989,
+    antiguedad: function() {
+        let anio_actual = new Date().getFullYear();
+        let publicacion = anio_actual - this.ano_de_publicacion;
+        return publicacion;
+    }
+};
+
+let antiguedad_libro = libro.antiguedad();
+console.log("Libro tiene antiguedad de ", antiguedad_libro);
